@@ -1,5 +1,6 @@
 # stdlib
 import time
+import sys
 
 # spclib
 import psycopg2
@@ -199,4 +200,4 @@ def main(host, port):
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1], sys.argv[2])
