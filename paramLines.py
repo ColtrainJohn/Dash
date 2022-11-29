@@ -182,14 +182,14 @@ def getApp(conn, parameters, dataset_id_options, region_options):
     return app
 
 
-def main():
+def main(host, port):
     conn, cur = connectDB()
     params = getMedParams(conn)
     datasets = getDatasetParams(conn)
     regions = getRegionParams(conn)
     app = getApp(conn, params, datasets, regions)
     try:
-        app.run_server(debug=True, host='0.0.0.0', port='8980')
+        app.run_server(debug=True, host=host, port=port)
     except Exception as ex:
         print(ex)
     finally:
